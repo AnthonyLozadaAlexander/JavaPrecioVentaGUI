@@ -58,6 +58,10 @@ public class PrecioVentaIGU extends javax.swing.JFrame {
     jLabel5.setFont(new java.awt.Font("Miracode", 0, 17)); // NOI18N
     jLabel5.setText("Precio A Vender");
 
+    txtGanacia.setEditable(false);
+
+    txtPrecioAVender.setEditable(false);
+
     btnSalir.setFont(new java.awt.Font("Miracode", 0, 17)); // NOI18N
     btnSalir.setText("Salir");
     btnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -159,7 +163,21 @@ public class PrecioVentaIGU extends javax.swing.JFrame {
   }//GEN-LAST:event_btnSalirActionPerformed
 
   private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
+    //  Declarar Variables
+    double costoArticulo, ganancia, montoaGanar, montoaVender;
     
+    // Asignacion de las variables a las cajas de txt  
+    costoArticulo = Double.parseDouble(txtCostoArticulo.getText());
+    montoaGanar = Double.parseDouble(txtMontoGanar.getText());
+    
+    // Realizar una operacion matematica
+    ganancia = (costoArticulo * montoaGanar) / 100;
+    txtGanacia.setText(""+ganancia);
+    
+    // Realizar el calculo del monto a vender
+    montoaVender = costoArticulo + ganancia;
+    
+    txtPrecioAVender.setText(""+montoaVender);
   }//GEN-LAST:event_btnCalcularActionPerformed
 
   private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed

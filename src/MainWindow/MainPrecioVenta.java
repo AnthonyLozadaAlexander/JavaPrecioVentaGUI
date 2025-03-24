@@ -5,6 +5,7 @@
 package MainWindow;
 
 import igu.PrecioVentaIGU;
+import com.formdev.flatlaf.FlatIntelliJLaf;
 
 /**
  *
@@ -16,6 +17,7 @@ public class MainPrecioVenta {
    * @param args the command line arguments
    */
   public static void main(String[] args) {
+      FlatIntelliJLaf.setup();
       PrecioVentaIGU Window = new PrecioVentaIGU();
       Window.setVisible(true);
       Window.setResizable(false);
